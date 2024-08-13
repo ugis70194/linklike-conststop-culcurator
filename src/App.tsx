@@ -28,7 +28,7 @@ function App() {
 
   return (
     <>
-      <p>一度の獲得 Love がカンストするに必要なラブアトラクトとハートの量を計算します</p>
+      <p>一度の獲得 Love がカンストするのに必要な<br/>ラブアトラクトとハートの量を計算します</p>
       <form
         onSubmit={
           handleSubmit(data => {
