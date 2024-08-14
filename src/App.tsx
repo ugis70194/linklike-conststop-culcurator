@@ -53,7 +53,7 @@ function App() {
         />
         <p><b>ラーニング</b></p>
         <div>
-          <label>マスタリーボーナス</label>
+          <label>マスタリーレベル</label>
           <input
             required={true}
             {...register('mastary_bonus')}

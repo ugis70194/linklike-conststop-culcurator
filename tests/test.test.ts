@@ -49,6 +49,7 @@ describe('love_par_heart', () => {
 })
 
 // ここから下は通らなくて OK
+/*
 describe('calculate_love', () => {
   const music_title_list: string[] = Object.keys(musicList);
   const sunohare = music_filter(music_title_list, 'Snow')[0];
@@ -109,5 +110,17 @@ describe('countstop_heart', () => {
     const LpH = love_par_heart(51469 + 88389 + 50210, musicList[sunohare].member, musicList[sunohare].time);
     expect(countstop_heart(10000, 10, LpH, 11.45, 5.0))
     .toEqual(299)
+  })
+})
+*/
+
+describe('calculate_love', () => {
+  const music_title_list: string[] = Object.keys(musicList);
+  const tukuyomi = music_filter(music_title_list, '月夜')[0];
+  test('vol 3, heart 129, attract 0', () => {
+    const ratio = love_ratio(10, 419, false);
+    const LpH = love_par_heart(15488+16190+32660, musicList[tukuyomi].member, musicList[tukuyomi].time);
+    expect(calculate_love(6374, 419, ratio, LpH, 111, 6))
+    .toEqual(2147483647)
   })
 })

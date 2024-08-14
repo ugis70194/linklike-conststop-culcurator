@@ -39,9 +39,11 @@ export function calculate_love(
   heart_count: number,
   ratio: number,
   LpH: number,
-  masterly_bonus: number,
-  love_bonus: number
+  masterly_level: number,
+  love_level: number
 ): number {
+  const masterly_bonus = masterly_level * 0.05
+  const love_bonus = love_level * 0.5
   const base_love = Math.ceil(ratio * heart_count * LpH)
   const love = base_love * (1.0+masterly_bonus/100.0) * (1.0+love_bonus/100.0)
   return Math.ceil(1.018 * love * (1.0+love_attract/100.0))
