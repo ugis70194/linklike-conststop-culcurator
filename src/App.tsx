@@ -28,7 +28,7 @@ function App() {
 
   return (
     <>
-      <p>一度の獲得 Love がカンストするのに必要な<br/>ラブアトラクトとハートの量を計算します</p>
+      <p>一度の獲得 Love がカンストするのに必要な<br/>ラブアトラクトとハートの量を計算します。（ハート種別は自動的にLOVELIVEで計算されます）</p>
       <form
         onSubmit={
           handleSubmit(data => {
@@ -38,9 +38,10 @@ function App() {
             console.log(data)
             const stats = data.smile + data.pure + data.cool;
             const LpH = love_par_heart(stats, musicList[music_title].member, musicList[music_title].time);
+            console.log(data.voltage, LpH, data.mastary_bonus, data.love_bonus)
             const tmp = []
             for(let attract: number = data.attract_lower; attract <= data.attract_upper; attract += 50){
-              const heart = countstop_heart(attract, data.voltage, LpH, data.mastary_bonus, data.love_bonus);
+              const heart = countstop_heart(attract, 3.5, LpH, data.mastary_bonus, data.love_bonus);
               tmp.push({attract: attract, heart: heart})
               console.log(attract, heart)
             }
