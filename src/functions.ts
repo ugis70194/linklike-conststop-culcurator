@@ -79,7 +79,7 @@ export function countstop_heart(
 ): number {
   let lower = 0
   let upper = 999
-  const MAX = Math.pow(2, 31)
+  const MAX = Math.pow(2, 31) - 1
   while(upper - lower > 1) {
     const mid = Math.floor((lower + upper) / 2)
     const ratio = love_ratio(voltage, mid, false);
