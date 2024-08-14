@@ -123,4 +123,10 @@ describe('calculate_love', () => {
     expect(calculate_love(6374, 419, ratio, LpH, 111, 6))
     .toEqual(2147483647)
   })
+  test('vol 9, heart 181, attract 193', () => {
+    const ratio = love_ratio(6, 136, true);
+    const LpH = love_par_heart(18112+16835+24902, musicList[tukuyomi].member, musicList[tukuyomi].time);
+    expect(calculate_love(479, 136, ratio, LpH, 2, 1))
+    .toEqual(59178952)
+  })
 })
